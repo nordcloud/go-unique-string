@@ -1,1 +1,1 @@
-module github.com/cloud-maker-ai/go-unique-string
+module github.com/wuwwlwwl/go-unique-string
