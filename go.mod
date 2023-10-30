@@ -1,1 +1,1 @@
-module github.com/wuwwlwwl/go-unique-string
+module github.com/nordcloud/go-unique-string
