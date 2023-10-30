@@ -53,7 +53,8 @@ func murmurHash64(data []byte) uint64 {
 	o := size - i
 
 	if o > 0 {
-		var h1 uint32
+		h1 := uint32(uint32(data[i]) | (uint32(data[i+1]) << 8) | (uint32(data[i+2]) << 16) | (uint32(data[i+3]) << 24))
+
 		if o < 4 {
 			switch o {
 			case 2:
@@ -63,8 +64,6 @@ func murmurHash64(data []byte) uint64 {
 			default:
 				h1 = uint32(data[i])
 			}
-		} else {
-			h1 = uint32(uint32(data[i]) | (uint32(data[i+1]) << 8) | (uint32(data[i+2]) << 16) | (uint32(data[i+3]) << 24))
 		}
 
 		h1 *= uint32(c4)
